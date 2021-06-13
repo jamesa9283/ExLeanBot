@@ -32,12 +32,6 @@ client.on('ready', () => {
   });
 
   client.on('message', msg => {
-    if (msg.content.toLowerCase().includes('help')) {
-      msg.channel.send('no');
-    }
-  });
-
-  client.on('message', msg => {
   if (msg.content.toLowerCase().includes('ping pong')) {
     msg.react('😄');
   }
@@ -64,8 +58,8 @@ client.on('ready', () => {
 			return;
 		}
 	}
-    console.log(reaction._emoji.name == '1️⃣');
-    if (reaction.message.author.id == '853624054886694932') {
+    console.log(reaction.message.id); // 853645612792152126  853645612792152126 853689102163771432
+    if (reaction.message.author.id == '853624054886694932' && reaction.message.id == '853645612792152126') {
         if (reaction._emoji.name == '1️⃣') {
             console.log(user);
             reaction.message.guild.members.fetch(user.id).then(member => {
