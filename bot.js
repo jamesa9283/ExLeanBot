@@ -32,6 +32,12 @@ client.on('ready', () => {
   });
 
   client.on('message', msg => {
+    if (msg.content.toLowerCase().includes('help')) {
+      msg.channel.send('no');
+    }
+  });
+
+  client.on('message', msg => {
   if (msg.content.toLowerCase().includes('ping pong')) {
     msg.react('😄');
   }
