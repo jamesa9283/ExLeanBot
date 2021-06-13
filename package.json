@@ -1,0 +1,26 @@
+{
+  "name": "exleanbot",
+  "version": "1.0.0",
+  "description": "ExLean Bot",
+  "main": "bot.js",
+  "scripts": {
+    "test": "node bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesa9283/ExLeanBot.git"
+  },
+  "keywords": [
+    "bot"
+  ],
+  "author": "James Arthur",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jamesa9283/ExLeanBot/issues"
+  },
+  "homepage": "https://github.com/jamesa9283/ExLeanBot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0"
+  }
+}
