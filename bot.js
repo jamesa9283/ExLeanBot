@@ -58,33 +58,28 @@ client.on('ready', () => {
 			return;
 		}
 	}
-    if (reaction.message.author.id == '853630661265195028') {
+    console.log(reaction._emoji.name == '1️⃣');
+    if (reaction.message.author.id == '853624054886694932') {
         if (reaction._emoji.name == '1️⃣') {
-            console.log(user)
+            console.log(user);
             reaction.message.guild.members.fetch(user.id).then(member => {
                 member.roles.add(TT).catch(console.error);
             })
         }
-    }
-    if (reaction.message.author.id == '853624054886694932') {
         if (reaction._emoji.name == '2️⃣') {
-            console.log(user)
+            console.log(user);
             reaction.message.guild.members.fetch(user.id).then(member => {
                 member.roles.add(SH).catch(console.error);
             })
         }
-    }
-    if (reaction.message.author.id == '853630766746435585') {
         if (reaction._emoji.name == '3️⃣') {
-            console.log(user)
+            console.log(user);
             reaction.message.guild.members.fetch(user.id).then(member => {
                 member.roles.add(HH).catch(console.error);
             })
         }
-    }
-    if (reaction.message.author.id == '853630826284449803') {
         if (reaction._emoji.name == '4️⃣') {
-            console.log(user)
+            console.log(user);
             reaction.message.guild.members.fetch(user.id).then(member => {
                 member.roles.add(other).catch(console.error);
             })
