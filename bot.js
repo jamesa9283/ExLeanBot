@@ -41,16 +41,30 @@ client.on('message', msg => {
     }
 });
 
+// BEEP BOOP
 client.on('message', msg => {
     if (msg.content.toLowerCase().includes('beep')) {
       msg.channel.send('BOOP!');
     }
 });
 
+// Bot likes ping pong
 client.on('message', msg => {
   if (msg.content.toLowerCase().includes('ping pong')) {
     msg.react('😄');
   }
+});
+
+// POGGG
+client.on('message', msg => {
+    if (msg.content.toLowerCase().includes('pog')) {
+      msg.react('🥰');
+    }
+  });
+
+// Welcomes people to the server
+client.on('guildMemberAdd', member => {
+    member.guild.channels.get('771750371684515922').send("Welcome" + member + ", have fun exploring the channels. BEEP BOOP. Do Lean."); 
 });
 
 // give roles system
