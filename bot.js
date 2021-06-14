@@ -62,6 +62,13 @@ client.on('message', msg => {
     }
   });
 
+// git video
+client.on('message', msg => {
+    if (msg.content == '.git') {
+      msg.channel.send('This may be helpful to you! https://youtu.be/BS0WseXeaJs');
+    }
+});
+
 // Welcomes people to the server
 client.on('guildMemberAdd', member => {
     member.guild.channels.get('771750371684515922').send("Welcome" + member + ", have fun exploring the channels. BEEP BOOP. Do Lean."); 
