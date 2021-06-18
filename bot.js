@@ -24,6 +24,7 @@ const heHimRole = '853630766746435585';
 const otherRole = '853630826284449803';
 const botUserId = '853624054886694932';
 const reactionMessage = '853645612792152126';
+const welcomeChannel = '771750371684515922';
 
 // ====== Bot Code =======
 
@@ -71,7 +72,7 @@ client.on('message', msg => {
 
 // Welcomes people to the server
 client.on('guildMemberAdd', member => {
-    member.guild.channels.get('771750371684515922').send("Welcome" + member + ", have fun exploring the channels. BEEP BOOP. Do Lean."); 
+    member.guild.channels.get(welcomeChannel).send("Welcome" + member + ", have fun exploring the channels. BEEP BOOP. Do Lean."); 
 });
 
 // give roles system
