@@ -14,8 +14,10 @@ LEAN Helper Bot for the University of Exeter LEAN Student Discord
 
  - LEAN through discord implementation 
     
-    -> Being tested in Ellie's Private Fork
-    
+    -> Being tested
+
+    ![Local Build](https://imgur.com/a/WcEvaKc.png)
+
  - Helpful LEAN commands / Documentation Lookup
 
     -> Planned
