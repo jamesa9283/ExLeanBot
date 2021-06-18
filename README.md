@@ -16,7 +16,7 @@ LEAN Helper Bot for the University of Exeter LEAN Student Discord
     
     -> Being tested
 
-    ![Local Build](https://imgur.com/a/WcEvaKc.png)
+    ![Local Build](https://i.imgur.com/dwR8GL3.png)
 
  - Helpful LEAN commands / Documentation Lookup
 
