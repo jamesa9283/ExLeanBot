@@ -170,3 +170,94 @@ client.on('messageReactionRemove', async (reaction, user) => {
         }
     }
 });
+
+
+var oneRole = '890879275228622878';
+var twoRole = '890878612927025152';
+var threeRole = '890879034454605864';
+const botUserId2 = '853624054886694932';
+const reactionMessage2 = '891029758459125880';
+
+
+
+// give roles system
+client.on('messageReactionAdd', async (reaction, user) => {
+    // cached roles to be added
+    const one = reaction.message.guild.roles.cache.find(guild => guild.id === oneRole);
+    const two = reaction.message.guild.roles.cache.find(guild => guild.id === twoRole);
+    const three = reaction.message.guild.roles.cache.find(guild => guild.id === threeRole);
+
+	// When a reaction is received, check if the structure is partial
+	if (reaction.partial) {
+		// If the message this reaction belongs to was removed, the fetching might result in an API error which should be handled
+		try {
+			await reaction.fetch();
+		} catch (error) {
+			console.error('Something went wrong when fetching the message: ', error);
+			// Return as `reaction.message.author` may be undefined/null
+			return;
+		}
+    }
+    
+    if (reaction.message.author.id == botUserId2 && reaction.message.id == reactionMessage2) {
+        if (reaction._emoji.name == '1️⃣') {
+            console.log(user);
+            reaction.message.guild.members.fetch(user.id).then(member => {
+                member.roles.add(one).catch(console.error);
+            })
+        }
+        if (reaction._emoji.name == '2️⃣') {
+            console.log(user);
+            reaction.message.guild.members.fetch(user.id).then(member => {
+                member.roles.add(two).catch(console.error);
+            })
+        }
+        if (reaction._emoji.name == '3️⃣') {
+            console.log(user);
+            reaction.message.guild.members.fetch(user.id).then(member => {
+                member.roles.add(three).catch(console.error);
+            })
+        }
+    }
+});
+
+// remove roles system
+client.on('messageReactionRemove', async (reaction, user) => {
+    // cached roles to be removed
+    const one = reaction.message.guild.roles.cache.find(guild => guild.id === oneRole);
+    const two = reaction.message.guild.roles.cache.find(guild => guild.id === twoRole);
+    const three = reaction.message.guild.roles.cache.find(guild => guild.id === threeRole);
+
+	// When a reaction is received, check if the structure is partial
+    if (reaction.partial) {
+		// If the message this reaction belongs to was removed, the fetching might result in an API error which should be handled
+		try {
+			await reaction.fetch();
+		} catch (error) {
+			console.error('Something went wrong when fetching the message: ', error);
+			// Return as `reaction.message.author` may be undefined/null
+			return;
+		}
+    }
+
+    if (reaction.message.author.id == botUserId2 && reaction.message.id == reactionMessage2) {
+        if (reaction._emoji.name == '1️⃣') {
+            console.log(user);
+            reaction.message.guild.members.fetch(user.id).then(member => {
+                member.roles.remove(one).catch(console.error);
+            })
+        }
+        if (reaction._emoji.name == '2️⃣') {
+            console.log(user);
+            reaction.message.guild.members.fetch(user.id).then(member => {
+                member.roles.remove(two).catch(console.error);
+            })
+        }
+        if (reaction._emoji.name == '3️⃣') {
+            console.log(user);
+            reaction.message.guild.members.fetch(user.id).then(member => {
+                member.roles.remove(three).catch(console.error);
+            })
+        }
+    }
+});
