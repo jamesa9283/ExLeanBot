@@ -26,6 +26,14 @@ const botUserId = '853624054886694932';
 const reactionMessage = '853645612792152126';
 const welcomeChannel = '771750371684515922';
 
+// ExMaths discord id codes
+const ExMathsYearTwoMessage = '931949923837042698';
+
+const ExMathsRoleMTH2005 = ''
+const ExMathsRoleMTH2009 = ''
+const ExMathsReactionMessageMTH2 = ''
+const ExMathsWelcomeChannel = ''
+
 // ====== Bot Code =======
 
 // startup
