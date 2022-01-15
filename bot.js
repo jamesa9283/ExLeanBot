@@ -261,3 +261,85 @@ client.on('messageReactionRemove', async (reaction, user) => {
         }
     }
 });
+
+
+
+// Below is code for ExMaths
+
+// ExMaths discord id codes
+const ExMathsYearTwoMessage = '931949923837042698';
+
+const ExMathsRoleMTH2005 = '931948923386462268'
+const ExMathsRoleMTH2009 = '931974740237750282'
+const ExMathsReactionMessageMTH2 = '931949923837042698'
+const ExMathsWelcomeChannel = '757519493512822810'
+const ExMathsRoleMsgUserID = '745931840011108372'
+
+// give roles system
+client.on('messageReactionAdd', async (reaction, user) => {
+    // cached roles to be added
+    const ExMathsMTH2005 = reaction.message.guild.roles.cache.find(guild => guild.id === ExMathsRoleMTH2005);
+    const ExMathsMTH2009 = reaction.message.guild.roles.cache.find(guild => guild.id === ExMathsRoleMTH2009);
+
+	// When a reaction is received, check if the structure is partial
+	if (reaction.partial) {
+		// If the message this reaction belongs to was removed, the fetching might result in an API error which should be handled
+		try {
+			await reaction.fetch();
+		} catch (error) {
+			console.error('Something went wrong when fetching the message: ', error);
+			// Return as `reaction.message.author` may be undefined/null
+			return;
+		}
+    }
+    
+    if (reaction.message.author.id == ExMathsRoleMsgUserID && reaction.message.id == ExMathsReactionMessageMTH2) {
+        if (reaction._emoji.name == '5️⃣') {
+            console.log(user);
+            reaction.message.guild.members.fetch(user.id).then(member => {
+                member.roles.add(ExMathsMTH2005).catch(console.error);
+            })
+        }
+        if (reaction._emoji.name == '9️⃣') {
+            console.log(user);
+            reaction.message.guild.members.fetch(user.id).then(member => {
+                member.roles.add(ExMathsMTH2009).catch(console.error);
+            })
+        }
+    }
+});
+
+// remove roles system
+client.on('messageReactionRemove', async (reaction, user) => {
+    // cached roles to be removed
+    const ExMathsMTH2005 = reaction.message.guild.roles.cache.find(guild => guild.id === ExMathsRoleMTH2005);
+    const ExMathsMTH2009 = reaction.message.guild.roles.cache.find(guild => guild.id === ExMathsRoleMTH2009);
+
+	// When a reaction is received, check if the structure is partial
+    if (reaction.partial) {
+		// If the message this reaction belongs to was removed, the fetching might result in an API error which should be handled
+		try {
+			await reaction.fetch();
+		} catch (error) {
+			console.error('Something went wrong when fetching the message: ', error);
+			// Return as `reaction.message.author` may be undefined/null
+			return;
+		}
+    }
+
+    if (reaction.message.author.id == ExMathsRoleMsgUserID && reaction.message.id == ExMathsReactionMessageMTH2) {
+        if (reaction._emoji.name == '5️⃣') {
+            console.log(user);
+            reaction.message.guild.members.fetch(user.id).then(member => {
+                member.roles.remove(ExMathsMTH2005).catch(console.error);
+            })
+        }
+        if (reaction._emoji.name == '9️⃣') {
+            console.log(user);
+            reaction.message.guild.members.fetch(user.id).then(member => {
+                member.roles.remove(ExMathsMTH2009).catch(console.error);
+            })
+        }
+    }
+});
+
